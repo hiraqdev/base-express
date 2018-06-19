@@ -8,12 +8,13 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,./yarn.lock,./LICENSE,./README --copy-files",
-    "api": "yarn run build && node dist/src/app.js",
+    "api": "yarn run build && node -r dotenv/config dist/src/app.js",
     "standard": "standard 'src/**/*.js'",
     "summary": "standard 'src/**/*.js' | standard-summary"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
     "morgan": "^1.9.0"
