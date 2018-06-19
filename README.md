@@ -5,8 +5,7 @@ Skeleton api using expressjs.
 Note:
 
 ```
-This skeleton only for api development, and using
-es2015 coding features.
+This skeleton only for api development, and using es2015 coding features.
 ```
 
 ## Dependencies
