@@ -34,3 +34,13 @@ Default middlewares:
 - `yarn run api` : Build and run api
 - `yarn run standard` : Run standardjs checker
 - `yarn run summary` : Run standardjs checker with standard-summary
+
+## Configurations
+
+I'm using `dotenv` rules, all available configurations placed at `env.sample`.
+You need to copy this file to `.env` and change all values.
+
+## Mongo
+
+Change `MONGO_URI` value in your `.env` file and setup based on your actual mongo instance.
+For more information: [Mongoose Connection](http://mongoosejs.com/docs/connections.html)
