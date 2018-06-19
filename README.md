@@ -16,6 +16,8 @@ ExpressJS: `4.16.3`
 
 Coding standard: `standardjs`
 
+REST standard: `jsonapi`
+
 Default middlewares:
 
 - body-parser
