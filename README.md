@@ -2,6 +2,13 @@
 
 Skeleton api using expressjs.
 
+Note:
+
+```
+This skeleton only for api development, and using
+es2015 coding features.
+```
+
 ## Dependencies
 
 NodeJS: `8.11.1`
