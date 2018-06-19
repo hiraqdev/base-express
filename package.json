@@ -8,7 +8,9 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,./yarn.lock,./LICENSE,./README --copy-files",
-    "api": "yarn run build && node dist/src/app.js"
+    "api": "yarn run build && node dist/src/app.js",
+    "standard": "standard 'src/**/*.js'",
+    "summary": "standard 'src/**/*.js' | standard-summary"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -19,6 +21,8 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "standard": "^11.0.1",
+    "standard-summary": "^1.0.0"
   }
 }
