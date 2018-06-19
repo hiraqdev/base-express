@@ -2,8 +2,12 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import helmet from 'helmet'
+import httpStatus from 'http-status-codes'
 
 import ping from './apps/ping'
+import jsonapi from './apps/jsonapi'
+
+import * as jsonapiHelper from './helpers/jsonapi'
 
 // initiate express main app
 const app = express()
@@ -20,6 +24,14 @@ app.use(helmet())
 
 // install apps
 app.use('/ping', ping)
+app.use('/jsonapi', jsonapi)
+
+// final error handling, all exception or error system should be throwed here
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  const error = jsonapiHelper.error(httpStatus.INTERNAL_SERVER_ERROR, err.name, err.message, err.code)
+  res.status(httpStatus.INTERNAL_SERVER_ERROR).json(jsonapiHelper.errors(error))
+})
 
 // run express engine
 app.listen(process.env.PORT, process.env.HOST, () => {

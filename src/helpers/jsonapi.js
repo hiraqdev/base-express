@@ -7,4 +7,21 @@ const data = (id, type, payload, rest = {}) => {
   return { data: resp }
 }
 
-export { data }
+const error = (status, title, detail, code = 0) => {
+  const resp = { status, title, detail }
+  if (code > 0) {
+    return Object.assign({ code }, resp)
+  }
+
+  return resp
+}
+
+const errors = (...rest) => {
+  if (rest.length >= 1) {
+    return { errors: rest }
+  }
+
+  return {}
+}
+
+export { data, errors, error }
