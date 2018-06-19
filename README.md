@@ -2,8 +2,6 @@
 
 Skeleton api using expressjs.
 
----
-
 ## Dependencies
 
 NodeJS: `8.11.1`
@@ -17,8 +15,6 @@ Default middlewares:
 - body-parser
 - helmet
 - morgan
-
----
 
 ## Scripts
 
