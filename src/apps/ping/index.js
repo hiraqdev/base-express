@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 router.get('/example-exception', (req, res, next) => {
   try {
-    const error =  new Error('test error')
+    const error = new Error('test error')
     error.code = 400
     throw error
   } catch (err) {
