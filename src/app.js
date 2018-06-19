@@ -3,6 +3,7 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import helmet from 'helmet'
 import httpStatus from 'http-status-codes'
+import mongoose from 'mongoose'
 
 import ping from './apps/ping'
 import jsonapi from './apps/jsonapi'
@@ -11,6 +12,22 @@ import * as jsonapiHelper from './helpers/jsonapi'
 
 // initiate express main app
 const app = express()
+
+/*
+By default i'm using MongoDB and Mongoose as ODM
+*/
+const mongoOptions = {
+  poolSize: 10,
+  autoIndex: false,
+  keepAlive: true
+}
+
+mongoose.connect(process.env.MONGO_URI, mongoOptions).then(() => {
+  console.info(`Connected to mongo uri: ${process.env.MONGO_URI}`)
+  console.log('=========================')
+}).catch(err => {
+  console.error(err.message)
+})
 
 // setup bodyparser
 app.use(bodyParser.urlencoded({ extended: false }))

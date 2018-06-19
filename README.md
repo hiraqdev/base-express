@@ -18,6 +18,10 @@ Coding standard: `standardjs`
 
 REST standard: `jsonapi`
 
+Database: `MongoDB`
+
+ODM: `Mongoose`
+
 Default middlewares:
 
 - body-parser
