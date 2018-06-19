@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
+import helmet from 'helmet'
 
 const app = express()
 
@@ -10,6 +11,9 @@ app.use(bodyParser.json())
 
 // setup morgan
 app.use(morgan('common'))
+
+// setup helmet
+app.use(helmet())
 
 // run express engine
 app.listen(process.env.PORT, process.env.HOST, () => {
