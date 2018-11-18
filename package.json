@@ -7,11 +7,12 @@
   "author": "Hiraq <hiraq.dev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,./yarn.lock,./LICENSE,./README --copy-files",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./coverage,./tests,./npm-debug.log,./yarn.lock,./LICENSE,./README --copy-files",
     "api": "yarn run build && node -r dotenv/config dist/src/app.js",
     "standard": "standard 'src/**/*.js'",
     "summary": "standard 'src/**/*.js' | standard-summary",
-    "test": "jest"
+    "test": "jest",
+    "compose": "docker-compose up --build"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

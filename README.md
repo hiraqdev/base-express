@@ -37,11 +37,44 @@ Default middlewares:
 - `yarn run standard` : Run standardjs checker
 - `yarn run summary` : Run standardjs checker with standard-summary
 - `yarn run test` : Run jest
+- `yarn run compose`: Run docker-compose engine
+
+## Docker
+
+build:
+
+```
+docker build -t <your_image_name> .
+```
+
+running a container:
+
+```
+docker run --name base-express-api -e MONGO_URI=<mongo_uri> -p 3000:3000 -d <your_image_name>
+```
+
+running docker-compose:
+
+```
+yarn compose
+```
 
 ## Configurations
 
 I'm using `dotenv` rules, all available configurations placed at `env.sample`.
 You need to copy this file to `.env` and change all values.
+
+```
+NOTE:
+-----
+
+This file (`.env`) will used as configuration for `docker-compose.yml` too.
+```
+
+## PM2
+
+I'm using `pm2-runtime` only for container based, please check `Dockerfile`.  When
+running this engine without docker (`yarn run api`), i'm just using `node app.js`.
 
 ## Mongo
 

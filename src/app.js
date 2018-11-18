@@ -9,21 +9,13 @@ import ping from './apps/ping'
 import jsonapi from './apps/jsonapi'
 
 import * as jsonapiHelper from './helpers/jsonapi'
+import config from './config'
 
 // initiate express main app
 const app = express()
 
-/*
-By default i'm using MongoDB and Mongoose as ODM
-*/
-const mongoOptions = {
-  poolSize: 10,
-  autoIndex: false,
-  keepAlive: true
-}
-
-mongoose.connect(process.env.MONGO_URI, mongoOptions).then(() => {
-  console.info(`Connected to mongo uri: ${process.env.MONGO_URI}`)
+mongoose.connect(config.mongo.uri, config.mongo.options).then(() => {
+  console.info(`Connected to mongo uri: ${config.mongo.uri}`)
   console.log('=========================')
 }).catch(err => {
   console.error(err.message)
@@ -51,9 +43,9 @@ app.use((err, req, res, next) => {
 })
 
 // run express engine
-app.listen(process.env.PORT, process.env.HOST, () => {
+app.listen(config.app.port, config.app.host, () => {
   console.log('=========================')
-  console.log(`Port: ${process.env.PORT}`)
-  console.log(`Host: ${process.env.HOST}`)
+  console.log(`Port: ${config.app.port}`)
+  console.log(`Host: ${config.app.host}`)
   console.log('=========================')
 })
