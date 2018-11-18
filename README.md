@@ -22,6 +22,8 @@ Database: `MongoDB`
 
 ODM: `Mongoose`
 
+Test: `Jest`
+
 Default middlewares:
 
 - body-parser
@@ -34,6 +36,7 @@ Default middlewares:
 - `yarn run api` : Build and run api
 - `yarn run standard` : Run standardjs checker
 - `yarn run summary` : Run standardjs checker with standard-summary
+- `yarn run test` : Run jest
 
 ## Configurations
 
