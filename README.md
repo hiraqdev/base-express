@@ -80,3 +80,45 @@ running this engine without docker (`yarn run api`), i'm just using `node app.js
 
 Change `MONGO_URI` value in your `.env` file and setup based on your actual mongo instance.
 For more information: [Mongoose Connection](http://mongoosejs.com/docs/connections.html)
+
+## Test With Jest
+
+Command:
+
+```
+yarn test
+```
+
+Example output:
+
+```
+$ yarn test
+yarn run v1.12.3
+$ jest
+ PASS  tests/helpers/jsonapi.test.js
+  test helpers/jsonapi - function: data
+    ✓ jsonapi data structure success (7ms)
+    ✓ jsonapi data structure adding rest payload (1ms)
+  test helpers/jsonapi - function: error
+    ✓ jsonapi error structure success (1ms)
+    ✓ jsonapi error structure adding code (1ms)
+  test helpers/jsonapi - function: errors
+    ✓ jsonapi errors structure success (1ms)
+    ✓ jsonapi errors structure return empty object
+
+ PASS  tests/test.test.js
+  ✓ test simple sum (1ms)
+
+------------|----------|----------|----------|----------|-------------------|
+File        |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+------------|----------|----------|----------|----------|-------------------|
+All files   |      100 |      100 |      100 |      100 |                   |
+ jsonapi.js |      100 |      100 |      100 |      100 |                   |
+------------|----------|----------|----------|----------|-------------------|
+Test Suites: 2 passed, 2 total
+Tests:       7 passed, 7 total
+Snapshots:   0 total
+Time:        0.927s, estimated 1s
+Ran all test suites.
+Done in 1.86s.
+```
