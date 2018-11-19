@@ -8,6 +8,21 @@ Note:
 This skeleton only for api development, and using es2015 features.
 ```
 
+## Usage
+
+How to use this skeleton?
+
+It's easy to use it. Initializing your project by clone this repo, example:
+
+```
+git clone https://github.com/hiraqdev/base-express my-project
+```
+
+Dont forget to change values:
+
+- `package.json`
+- create `.env` from `env.sample`
+
 ## Dependencies
 
 NodeJS: `8.11.1`
